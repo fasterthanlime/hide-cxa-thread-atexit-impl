@@ -41,6 +41,8 @@ to a constant `0x0`.
 Then, that part of Rust's libstd code:
 
 ```rust
+// in `rust/src/libstd/sys/unix/fast_thread_local.rs`
+
 pub unsafe fn register_dtor(t: *mut u8, dtor: unsafe extern "C" fn(*mut u8)) {
     use crate::mem;
     use crate::sys_common::thread_local::register_dtor_fallback;
